@@ -1,0 +1,134 @@
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+    --font-cursive: 'Black And White Picture', sans-serif;
+    --font-other: 'Fredoka One', cursive;
+    --font-body:'Inconsolata', monospace;
+    --step--2: clamp(1.04rem, 1.04rem + 0.00vw, 1.04rem);
+    --step--1: clamp(1.25rem, 1.23rem + 0.10vw, 1.30rem);
+    --step-0: clamp(1.50rem, 1.45rem + 0.24vw, 1.63rem);
+    --step-1: clamp(1.80rem, 1.71rem + 0.45vw, 2.03rem);
+    --step-2: clamp(2.16rem, 2.01rem + 0.74vw, 2.54rem);
+    --step-3: clamp(2.59rem, 2.36rem + 1.14vw, 3.17rem);
+    --step-4: clamp(3.11rem, 2.78rem + 1.67vw, 3.97rem);
+    --step-5: clamp(3.73rem, 3.25rem + 2.39vw, 4.96rem);
+ }
+ 
+ [data-theme='normal'] {
+    --color-background: #fff;
+    --color-primary: rgb(0, 128, 4);
+    --color-text: rgb(14, 169, 0);
+ }
+ 
+ [data-theme='evil'] {
+    --color-background: rgb(21, 21, 21);
+    --color-primary: rgba(164, 0, 0, 0.8);
+    --color-text: rgba(184, 0, 0, 0.8);
+    --img-opacity: 0.6;
+ }
+ [data-theme='normal'] .normal {
+    display: none;
+ }
+ [data-theme='evil'] .evil {
+    display: none;
+ }
+
+ [data-theme='normal'] #flame {
+    display: none;
+ }
+
+ [data-theme='evil'] #happy {
+    display: none;
+ }
+
+ [data-theme='evil'] h1 {
+    font-family: var(--font-cursive);
+    font-size: var(--step-3);
+ }
+
+ [data-theme='normal'] h1 {
+    font-family: var(--font-other);
+    font-size: var(--step-3);
+ }
+ 
+ * { box-sizing: border-box; }
+ 
+ html {
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    font-size: 62.5%;
+    height: 100%;
+ }
+ 
+ body {
+    background-color: var(--color-background);
+    border: 2vw solid var(--color-border);
+    color: var(--color-text);
+    font-size: 16px;
+    min-height: 100%;
+    padding: 3vw;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    text-align: center;
+    margin:10%;
+ }
+ 
+
+
+ p {
+    font-size: var(--step--1);
+ }
+ 
+ img {
+    opacity: var(--img-opacity);
+    transition: opacity 0.25s ease-out;
+    width: 30%;
+ }
+ 
+ img:hover {
+    opacity: 1;
+    width: 50%;
+ }
+
+
+ #flame img{
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left:4%; 
+
+ }
+
+ #happy img{
+    width: 10%;
+    position: absolute;
+    top: 40%;
+    left:10%; 
+
+ }
+
+ #result{
+    margin: auto;
+    width: 50%;
+    margin-top: 10%;
+ }
+ 
+ .grid {
+    display: flex;
+    flex-flow: row wrap;
+ }
+ 
+ @media (min-width: 62em) {
+    .grid.halves > .column {
+       flex: 1 1 50%;
+    }
+    .grid.thirds > .column {
+       flex: 1 1 calc(100% / 3);
+    }
+ }
+ /* 
+ .toggle {
+    bottom: 3vw;
+    right: 3vw;
+    position: fixed;
+    z-index: 1;
+ } */
